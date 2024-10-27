@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Gallery container */
+        #api {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Individual gallery item */
+        .gallery-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Image styling */
+        .gallery-item img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        /* Title styling */
+        .gallery-item h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        /* Description styling */
+        .gallery-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .add-to-cart,
+        .buy-now {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover,
+        .buy-now:hover {
+            background-color: #005f73;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="api"></div>
+
+    <script src="{% static 'index.js' %}"></script>
+</body>
+
+</html>
